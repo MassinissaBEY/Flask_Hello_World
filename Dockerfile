@@ -1,13 +1,12 @@
-FROM python:3.10-slim
+dockerfileFROM python:3.9-slim
 
-# Définir le dossier de travail
 WORKDIR /app
 
-# Copier les fichiers nécessaires
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
 COPY . .
 
-# Lancer Flask avec ngrok
+EXPOSE 5000
+
 CMD ["python", "__init__.py"]
