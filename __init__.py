@@ -55,12 +55,8 @@ def valeur_maximale(nombres):
 @app.route('/cv')
 def cv():
     return render_template("cv.html")
-def start_ngrok():
-    url = ngrok.connect(5000)
-    print(f"\n🔗 Ngrok URL (actif 120s) : {url}\n")
-    time.sleep(120)
-    ngrok.disconnect(url)
-    print("⛔️ Ngrok tunnel fermé après 120 secondes.")
 
-if __name__ == "__main__":
-  app.run(debug=True)   #commit222
+pythonif __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0', port=5000)
+# if __name__ == "__main__":
+#   app.run(debug=True)   #commit222
