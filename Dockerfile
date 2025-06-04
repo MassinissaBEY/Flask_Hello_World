@@ -1,17 +1,13 @@
-# Utilise l'image officielle de Python
-FROM python:3.11-slim
+FROM python:3.10-slim
 
-# Définir le répertoire de travail dans le conteneur
+# Définir le dossier de travail
 WORKDIR /app
 
-# Copier les fichiers dans le conteneur
-COPY . /app
-
-# Installer les dépendances
+# Copier les fichiers nécessaires
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Exposer le port Flask
-EXPOSE 5000
+COPY . .
 
-# Lancer l’application Flask
+# Lancer Flask avec ngrok
 CMD ["python", "__init__.py"]
