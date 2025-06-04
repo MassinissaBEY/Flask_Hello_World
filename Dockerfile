@@ -1,6 +1,6 @@
-dockerfileFROM python:3.9-slim
+FROM python:3.9-slim
 
-WORKDIR /app
+WORKDIR /Flask_Hello_World
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
