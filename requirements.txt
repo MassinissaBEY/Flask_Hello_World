@@ -1,2 +1,1 @@
-flask
-pyngrok
+txtFlask==2.3.3
